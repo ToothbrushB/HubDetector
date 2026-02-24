@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
   private DigitalOutput dout;
   private Debouncer debouncer = new Debouncer(0.05, DebounceType.kFalling);
-  private LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.005);
+  private LinearFilter filter = LinearFilter.highPass(0.1, 0.005);
   private AHRS ahrs;
   private AddressableLED leds;
   private AddressableLEDBuffer ledBuffer = new AddressableLEDBuffer(500);
